@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.product-details.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-items-container{
+    margin-left: 40vw;
+}
+
+.navbar-items{
+    margin-right: 2rem;
+}
+
+.input-search{
+    padding: 50px;
+    max-width: 1000px;
+}
+
+.button-input{
+    background-color: black;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.accordion{
+    margin-top: 3rem;
+    width: 300px;
+}
+
+.accordion-item:hover{
+    cursor: pointer;
+}
+
+.accordion-item{
+    border: none;
+    color: red;
+}
+
+.product-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4rem;
+    column-gap: 2rem;
+    list-style: none;
+}
+
+.card-product{
+    width: 90%;
+    border: 1px solid lightgray;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.card-product:hover{
+    cursor: pointer;
+}
+
+.card-product-img{
+    position: relative;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.card-product-img img{
+    height: 80%;
+    margin: 0 auto;
+    object-fit: contain;
+    width: 80%;
+    transition: 0.8s;
+}
+
+.card-img-hidden{
+    position: absolute;
+    opacity: 0%;
+}
+
+.card-data-container{
+    padding: 30px;
+}
+
+.card-product-img:hover .card-img-hidden{
+    opacity: 100%;
+    transition: 0.8s;
+}
+
+.card-product-img:hover .card-img-primary{
+    opacity: 0%;
+    transition: 0.8s;
+}
+
+.card-data-brand{
+    color: lightgray;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.card-data-title{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: #515151;
+    font-weight: 600;
+}
+
+.card-product button{
+    height: 50px;
+    width: 50px;
+    line-height: 0;
+    color: #fff;
+    font-size: 1.3rem;
+    background: rgb(52,58,64);
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+}
+
+.product-detail-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    flex-direction: row;
+    gap: 3rem;
+    padding: 3rem;
+}
+
+.product-detail-img{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-detail-img img{
+    width: 50%;
+}
+
+.product-detail-button{
+    position: absolute;
+    background: rgb(52,58,64);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    height: 40px;
+    line-height: 2.2;
+    width: 40px;
+    z-index: 9;
+}
+
+.back{
+    left: 50px;
+}
+
+.next{
+    right: 50px;
+}
+
+.product-detail-brand{
+    color: lightgray;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.product-detail-title{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: #515151;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.product-detail-description{
+    margin-bottom: 30px;
+}
+
+.product-detail-label{
+    color: lightgray;
+    margin-bottom: 5px;
+}
+
+.product-detail-price{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.product-detail-price-container{
+    display: flex;
+    gap: 15rem;
+}
+
+.quantity-button{
+    background: none;
+    height: 30px;
+    line-height: 1.9;
+    width: 30px;
+    border: 1px solid lightgray;
+}
+
+.quantity-value{
+    line-height: 1.9;
+    padding: 4px 20px;
+}
+
+.product-detail-addcart{
+    background: rgb(52,58,64);
+    color: white;
+    font-size: 1.1rem;
+    margin: 50px 0;
+    padding: 15px;
+    width: 100%;
+}       
+
+.product-detail-addcart img{
+    display: inline-block;
+}
+
