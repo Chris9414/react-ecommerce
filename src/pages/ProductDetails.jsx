@@ -6,6 +6,7 @@ import { filterProductsCategoryThunk } from '../store/slices/products.slice';
 import cart from '../assets/images/cart.svg'
 import back from '../assets/images/back.svg'
 import next from '../assets/images/next.svg'
+import { addProductThunk } from '../store/slices/purchases.slice';
 
 const ProductDetails = () => {
 
@@ -25,15 +26,59 @@ const ProductDetails = () => {
             })
     }, [id])
 
-    console.log(product)
+    const [quantity, setQuantity] = useState(0)
+
+    const addProduct = () => {
+        const cart = {
+            productId: product.id,
+            quantity: quantity + 1,
+        }
+        dispatch(addProductThunk(cart))
+    }
+
+    const [imageSelected, setImageSelected] = useState(0)
+
+    const nextImage = () => {
+        if(imageSelected < 2){
+            setImageSelected(imageSelected + 1)
+        }
+    }
+
+    const backImage = () => {
+        if(imageSelected > 0){
+            setImageSelected(imageSelected - 1)
+        }
+    }
+
+    const plusProduct = () => {
+        setQuantity(quantity + 1)
+    }
+
+    const minusProduct = () => {
+        if(quantity > 0){
+        setQuantity(quantity - 1)
+        }
+    }
+
 
     return (
         <div>
             <div className='product-detail-container'>
-                <div className='product-detail-img'>
-                    <button className='product-detail-button back'><img src={back} alt="" /></button>
-                    <img src={product.images?.[0].url} alt="" />
-                    <button className='product-detail-button next'><img src={next} alt="" /></button>
+                <div>
+                    <div className='product-detail-img'>
+                        <button className='product-detail-button back' onClick={() => backImage()}><img src={back} alt="" /></button>
+                        <div className='product-detail-img-box'>
+                            <img src={product.images?.[imageSelected]?.url} alt="" />
+                        </div>
+                        <button className='product-detail-button next' onClick={() => nextImage()}><img src={next} alt="" /></button>
+                    </div>
+                    <div className='litle-img'>
+                        {product.images?.map(img => (
+                            <div key={img.id} className='litle-img-box' onClick={() => setImageSelected(product.images.findIndex(select => select.id === img.id))}>
+                                <img src={img.url} alt="" />
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 <div>
                     <p className='product-detail-brand'>{product.brand}</p>
@@ -46,20 +91,20 @@ const ProductDetails = () => {
                         </article>
                         <div>
                             <p className='product-detail-label'>Quantity</p>
-                            <div>
-                                <button className='quantity-button'>-</button>
-                                <span className='quantity-value'>1</span>
-                                <button className='quantity-button'>+</button>
+                            <div className="quantity-section">
+                                <button className='quantity-button' onClick={() => minusProduct()}>-</button>
+                                <input className='quantity-value' type="text" value={quantity} onChange={e => setQuantity(e.target.value)} />
+                                <button className='quantity-button' onClick={() => plusProduct()}>+</button>
                             </div>
                         </div>
                     </div>
-                    <button className='product-detail-addcart'><span>Add to cart </span><img src={cart} alt="" /></button>
+                    <button onClick={addProduct} className='product-detail-addcart'><span>Add to cart </span><img src={cart} alt="" /></button>
                 </div>
             </div>
 
 
 
-            <h4>Discover similar items</h4>
+            <h3 className='similar-title '>Discover similar items</h3>
             <ul className='product-list'>
                 {
                     productList.map(productItem => (

@@ -23,7 +23,6 @@ const Home = () => {
             .then(res => setCategories(res.data))
     }, [])
 
-    console.log(productsList)
 
     return (
         <div className='home-container'>
@@ -34,7 +33,7 @@ const Home = () => {
                         <Accordion.Body>
                             <ul>
                                 {categories.map(category => (
-                                    <li className='accordion-item' key={category.id} onClick={() => dispatch(filterProductsCategoryThunk(category.id))}>
+                                    <li className='accordion-item' key={category.id} style={{border: "none"}} onClick={() => dispatch(filterProductsCategoryThunk(category.id))}>
                                         {category.name}
                                     </li>
                                 ))}
