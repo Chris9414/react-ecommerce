@@ -391,3 +391,79 @@ img{
     margin-bottom: 2rem;
 }
 
+.login-container{
+    margin: 5rem auto;
+    width: 400px;
+    height: 580px;
+    background-color: rgb(230, 226, 226);
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.login-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #515151;
+}
+
+.test-data-container{
+    background-color: rgb(192, 248, 248);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 30px;
+}
+
+.test-data-container img{
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.test-data-container div{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.test-data-title{
+    color: #515151;
+    text-align: center;
+}
+
+footer{
+    background: #3c3c3b;
+    padding: 60px 0;
+}
+
+footer p{
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+footer p img{
+    margin: 0;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 30px;
+}
+
+.icon-box{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #50504f;
+    display: flex;
+    align-items: center;
+}
+

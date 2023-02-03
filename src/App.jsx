@@ -9,6 +9,10 @@ import AppNavbar from './components/AppNavbar'
 import LoadinggScreen from './components/LoadinggScreen'
 import { useSelector } from 'react-redux'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import github from './assets/images/github.svg'
+import facebook from './assets/images/facebook.svg'
+import linkedin from './assets/images/linkedin.svg'
+import copy from './assets/images/copyright.svg'
 
 function App() {
 
@@ -27,8 +31,22 @@ function App() {
           <Route element={<ProtectedRoutes/>}>
             <Route path='/purchases' element={<Purchases/>} />
           </Route>
-          
         </Routes>
+        <footer>
+          <p><img src={copy} alt="" /> Christian Rodriguez</p>
+          <p><img src={copy} alt="" /> Academlo 2023</p>
+          <div className='icon-container'>
+              <div className='icon-box'>
+                <img src={linkedin} alt="" />
+              </div>
+              <div className='icon-box'>
+                <img src={github} alt="" />
+              </div>
+              <div className='icon-box'>
+                <img src={facebook} alt="" />
+              </div>
+          </div>
+        </footer>
     </HashRouter>
   )
 }
